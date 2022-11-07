@@ -4,12 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
-
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { FaGithub} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
      
-    const{signIn}=useContext(AuthContext)
-
+    const{signIn,githubAndGoogleSignIn}=useContext(AuthContext)
+     
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider();
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -25,6 +29,30 @@ const Login = () => {
             })
             .catch(error => toast.error(error.message))
     }
+
+
+    const handleGoogleSignIn = (e) => {
+        e.preventDefault()
+        githubAndGoogleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                toast.success("SignIn with Google Successfull")
+            })
+            .catch(error => toast.error(error.message))
+    }
+
+    const handleGithubSignIn = (e) => {
+        e.preventDefault()
+        githubAndGoogleSignIn(githubProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                toast.success("SignIn with Github Successfull")
+            })
+            .catch(error => toast.error(error.message))
+    }
+
     return (
         <Form onSubmit={handleSubmit}  className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
 
@@ -41,6 +69,10 @@ const Login = () => {
         <Button variant="primary" type="submit">
             Login
         </Button>
+        <Link className='fs-3 ms-4 pe-auto'><FcGoogle onClick={handleGoogleSignIn} ></FcGoogle></Link>
+        
+        <Link className='fs-3 ms-4'><FaGithub onClick={handleGithubSignIn} ></FaGithub></Link>
+            <br /> <br />
         <Link className='ms-3' to="/register">Don't have an account? Please Register</Link>
     </Form>
     );
