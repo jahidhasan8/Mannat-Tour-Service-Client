@@ -6,16 +6,16 @@ import Form from 'react-bootstrap/Form';
 
 const Login = () => {
     return (
-        <Form  className=" w-50 mt-5 shadow p-3 rounded mx-auto">
+        <Form  className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name='email' placeholder="Enter email" required />
+            <Form.Control type="email" name='email' placeholder="Enter your email" required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name='password' placeholder="Password" required />
+            <Form.Control type="password" name='password' placeholder="Enter your password" required />
         </Form.Group>
 
         <Button variant="primary" type="submit">
