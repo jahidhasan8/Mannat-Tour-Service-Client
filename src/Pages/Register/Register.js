@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                form.reset();
+                toast.success("You have Register successfully")
+            })
+            .catch(error => toast.error(error.message))
+    }
+
     return (
-        <Form className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
+        <Form onSubmit={handleSubmit} className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
             <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control type="text" name='name' placeholder="Enter your name" />
