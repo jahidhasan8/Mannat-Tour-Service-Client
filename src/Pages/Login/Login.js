@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { FaGithub} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -11,10 +12,14 @@ import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
      
-    const{signIn,githubAndGoogleSignIn}=useContext(AuthContext)
+    const{signIn,githubAndGoogleSignIn,setLoading}=useContext(AuthContext)
      useTitle("Login")
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider();
+    const navigate=useNavigate();
+    const location=useLocation();
+    const from=location.state?.from?.pathname || '/'
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -26,9 +31,14 @@ const Login = () => {
                 const user = result.user
                 console.log(user);
                 form.reset()
+                navigate(from,{replace:true})
                 toast.success("You have Login successfully")
             })
             .catch(error => toast.error(error.message))
+
+            .finally(()=>{
+                setLoading(false);
+               })
     }
 
 

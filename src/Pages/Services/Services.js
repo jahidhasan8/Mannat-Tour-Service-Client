@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const Services = () => {
     const services = useLoaderData()
+    const{setLoading}=useContext(AuthContext)
      useTitle("Services")
     return (
         <div>
-
+             
             <div className="row row-cols-1 rounded row-cols-md-3 g-5 mt-5 mx-auto container">
-                {
-                    services.map(service => <div key={service._id} >
+            
+                {  
+                   
+                    services.map(service => <div key={service._id}  >
                         <div className="col">
+                            
                             <div className="card h-50 w-full shadow-lg rounded-lg">
                                 <div ><img style={{ height: "300px" }} src={service.image} className="card-img-top rounded  p-2" alt="..." /></div>
                                 <div className="card-body">
