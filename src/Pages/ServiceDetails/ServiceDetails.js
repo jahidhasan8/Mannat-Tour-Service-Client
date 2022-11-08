@@ -2,6 +2,7 @@
 import React  from 'react';
 import { Card } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import ServiceReview from './ServiceReview/ServiceReview';
 /* import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -11,7 +12,7 @@ const ServiceDetails = () => {
 
     
     const services = useLoaderData()
-   
+     useTitle("ServiceDetails")
     const { name, description, image, price, rating } = services
     return (
         <div>

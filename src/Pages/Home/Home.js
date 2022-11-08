@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CarouselBanner from './Carousel/CarouselBanner'
+import useTitle from '../../hooks/useTitle';
+
 const Home = () => {
+    useTitle("Home")
     const[services,setServices]=useState([])
     let size=3
     useEffect(()=>{
@@ -14,6 +17,7 @@ const Home = () => {
       },[size])
     return (
         <div >
+           
             <CarouselBanner></CarouselBanner>
            <div className="row row-cols-1 rounded row-cols-md-3 g-4 mt-5 mx-auto container">
                         {

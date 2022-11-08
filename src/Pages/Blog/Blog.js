@@ -1,10 +1,16 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
+
+
 
 const Blog = () => {
+   useTitle("Blog")
     return (
         <div className='p-5 '>
+           
             <h4>1. Difference between SQL and NoSQL?</h4>
             <div>
+
                 <p><span className='fw-bold'>SQL</span> <br /> (i) SQL databases are primarily called RDBMS or Relational Databases <br /> (ii)Traditional RDBMS uses SQL syntax and queries to analyze and get the data for further insights. They are used for OLAP systems. <br /> (iii) Structured query language (SQL) <br /> (iv) SQL databases are table based databases <br /> (v) SQL databases have a predefined schema <br /> (vi) SQL databases are vertically scalable <br /> (vii) SQL databases are not suitable for hierarchical data storage. <br /> (viii) These databases are best suited for complex queries <br /> (ix)It should be used when data validity is super important <br /> (x) Cross-platform support, Secure and free <br /> (xi) ACID( Atomicity, Consistency, Isolation, and Durability) is a standard for RDBMS <br /> (xii) Examples: MySQL, PostgreSQL, Oracle, MS-SQL Server etc <br /> <br /> </p>
 
 
@@ -45,7 +51,7 @@ const Blog = () => {
                 The web server would have multiple threads and when concurrent requests get to the webserver, the webserver picks threadOne from the threadPool and threadOne processes requestOne and responds to clientOne and when the second request comes in, the web server picks up the second thread from the threadPool and picks up requestTwo and processes it and responds to clientTwo. threadOne is responsible for all kinds of operations that requestOne demanded including doing any blocking IO operations.
 
                 The fact that the thread needs to wait for blocking IO operations is what makes it inefficient. With this kind of a model, the webserver is only able to serve as much requests as there are threads in the thread pool.
-                  
+
                 NodeJS Web Server maintains a limited Thread Pool to provide services to client requests. Multiple clients make multiple requests to the NodeJS server. NodeJS receives these requests and places them into the EventQueue .
                 NodeJS server has an internal component referred to as the EventLoop which is an infinite loop that receives requests and processes them. This EventLoop is single threaded. In other words, EventLoop is the listener for the EventQueue.
                 So, we have an event queue where the requests are being placed and we have an event loop listening to these requests in the event queue.

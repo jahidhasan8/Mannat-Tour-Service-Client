@@ -7,11 +7,12 @@ import toast from 'react-hot-toast';
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { FaGithub} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
      
     const{signIn,githubAndGoogleSignIn}=useContext(AuthContext)
-     
+     useTitle("Login")
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider();
     const handleSubmit = (e) => {

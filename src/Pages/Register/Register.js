@@ -4,10 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
-
+     useTitle("Register")
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;

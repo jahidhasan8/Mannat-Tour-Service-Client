@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
-
+     useTitle('AddService')
     const handleAddService=(e)=>{
       e.preventDefault()
       const form=e.target 
@@ -26,7 +27,8 @@ const AddService = () => {
           "content-type": "application/json"
         },
         body: JSON.stringify(service)
-      }).then(res => res.json())
+      })
+      .then(res => res.json())
       .then(data => {
         if(data.acknowledged){
           toast.success("New Service added Successfully ");
