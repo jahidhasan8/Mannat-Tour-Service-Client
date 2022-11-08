@@ -28,7 +28,7 @@ const Home = () => {
                                                 {service?.description.slice(0, 100) + '...'}
                                             </p>
                                         </div>
-                                        <Link to={``} className="btn btn-dark ">Service Details</Link>
+                                        <Link to={`/serviceDetails/${service._id}`} className="btn btn-dark ">Service Details</Link>
                                     </div>
                                 </div>
 
