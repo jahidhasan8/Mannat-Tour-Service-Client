@@ -13,7 +13,7 @@ const ServiceReview = () => {
     const { user } = useContext(AuthContext)
     const [customerReview, setCustomerReview] = useState([])
       
-    console.log(customerReview[0]);
+    // console.log(customerReview[0]);
 
 
     const handleAddReview = (e) => {

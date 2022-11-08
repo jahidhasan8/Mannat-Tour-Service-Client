@@ -40,28 +40,28 @@ const MyReviews = () => {
         }
     }
 
-    /*  const handleStatusUpdate = (id) => {
-         fetch(`https://genius-car-server-wine.vercel.app/orders/${id}`, {
+     const handleUpdate = (id) => {
+         fetch(`http://localhost:5000/reviews/${id}`, {
              method: 'PATCH',
              headers: {
-                 'content-type': 'application/json',
-                 authorization: `Bearer ${localStorage.getItem('genius-token')}`
+                 'content-type': 'application/json'
+                 
              },
-             body: JSON.stringify({ status: 'Approved' })
+             body: JSON.stringify({  })
          })
              .then(res => res.json())
              .then(data => {
                  console.log(data)
-                 if (data.modifiedCount > 0) {
+                 if (data.modifiedCount) {
  
-                     const remaining = orders.filter(odr => odr._id !== id)
-                     const approving = orders.find(odr => odr._id === id)
+                     const remaining = reviews.filter(odr => odr._id !== id)
+                     const approving = reviews.find(odr => odr._id === id)
                      approving.status = 'Approved'
-                     const newOrders = [approving, ...remaining]
-                     setOrders(newOrders);
+                     const newReviews = [approving, ...remaining]
+                     setReviews(newReviews);
                  }
              })
-     } */
+     }
 
     return (
         <div>
@@ -92,6 +92,7 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                             
                             ></ReviewTable>)
                         }

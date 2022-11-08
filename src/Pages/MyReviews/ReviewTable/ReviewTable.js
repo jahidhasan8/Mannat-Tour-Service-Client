@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { FiEdit } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 const ReviewTable = ({review,handleDelete}) => {
 //    console.log(review);
     const { serviceName,_id, text,price, customer,rating, serviceId } = review;
@@ -42,6 +43,7 @@ const ReviewTable = ({review,handleDelete}) => {
             <td>{rating} star</td>
             <td><small>{text}</small></td>
             <th>
+            <Link to={`/updateReview/${_id}`} className='btn btn-success rounded-circle'><FiEdit></FiEdit></Link>
             </th>
         </tr>
     );
