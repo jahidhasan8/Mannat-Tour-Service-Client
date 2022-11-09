@@ -38,6 +38,10 @@ const MyReviews = () => {
         if (allow) {
             fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('Tour-token')}`
+    
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -51,28 +55,6 @@ const MyReviews = () => {
         }
     }
 
-    const handleUpdate = (id) => {
-        fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-
-            },
-            body: JSON.stringify({})
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.modifiedCount) {
-
-                    const remaining = reviews.filter(odr => odr._id !== id)
-                    const approving = reviews.find(odr => odr._id === id)
-                    approving.status = 'Approved'
-                    const newReviews = [approving, ...remaining]
-                    setReviews(newReviews);
-                }
-            })
-    }
 
     return (
         <div>
@@ -84,7 +66,7 @@ const MyReviews = () => {
 
             <div className=" w-full">
                 <table className="table w-50 mx-auto">
-                    {/* head  */}
+            
                     <thead>
                         <tr>
                             <th>
@@ -103,7 +85,6 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handleDelete={handleDelete}
-                                handleUpdate={handleUpdate}
 
                             ></ReviewTable>)
                         }

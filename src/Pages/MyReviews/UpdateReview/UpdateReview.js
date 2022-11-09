@@ -7,10 +7,8 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const UpdateReview = () => {
     const review = useLoaderData()
     const { user } = useContext(AuthContext)
-    //   console.log(review);
     const [customerReview, setCustomerReview] = useState(review)
 
-    // const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`)
@@ -27,7 +25,6 @@ const UpdateReview = () => {
         const text = form.text.value
         const photo = form.photo.value
         const rating = form.rating.value
-        // form.reset()
 
         const updatedReview = {
 
@@ -41,7 +38,9 @@ const UpdateReview = () => {
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('Tour-token')}`
+
             },
             body: JSON.stringify(customerReview)
         })
@@ -49,12 +48,10 @@ const UpdateReview = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     toast.success('Review updated successfully')
-                    //  console.log(data)
-
                 }
             })
-
     }
+
     return (
         <div>
             <Form onSubmit={handleUpdateReview} className=" w-50 mt-4 shadow-lg p-3 rounded-4 mx-auto">
