@@ -37,6 +37,9 @@ React Icons have been used to design.
 ### `React-Hot-Toast`
 I have used react hot toast for show error and successful toast messages
 
+### `React-photo-view`
+I have used React-photo-view for show services picture full page/zoom view
+
 ### `Mongodb`
 I have used Mongodb database
 

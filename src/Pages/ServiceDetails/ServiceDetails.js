@@ -1,18 +1,19 @@
 
-import React  from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import ServiceReview from './ServiceReview/ServiceReview';
+import { PhotoView } from 'react-photo-view';
 /* import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider'; */
 
 const ServiceDetails = () => {
 
-    
+
     const services = useLoaderData()
-     useTitle("ServiceDetails")
+    useTitle("ServiceDetails")
     const { name, description, image, price, rating } = services
     return (
         <div>
@@ -23,7 +24,11 @@ const ServiceDetails = () => {
                     </Card.Title>
 
                     <div >
-                        <Card.Img className='px-5 center-block mt-2 w-100  rounded' variant="top" src={image} />
+
+                        <PhotoView src={image}>
+                            <Card.Img className='px-5 center-block mt-2 w-100  rounded' variant="top" src={image} />
+                        </PhotoView>
+
                         <Card.Body>
 
                             <Card.Text className='mt-4 px-3 text-justify' >
@@ -45,9 +50,9 @@ const ServiceDetails = () => {
 
             {/* Review Section */}
             <div className='mb-5 w-full container'>
-                 
-                 <ServiceReview></ServiceReview>
-              
+
+                <ServiceReview></ServiceReview>
+
             </div>
         </div>
     );

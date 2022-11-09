@@ -4,6 +4,7 @@ import CarouselBanner from './Carousel/CarouselBanner'
 import useTitle from '../../hooks/useTitle';
 import Faq from '../Home/Faq/Faq'
 import About from '../Home/About/About'
+import { PhotoView } from 'react-photo-view';
 
 const Home = () => {
     useTitle("Home")
@@ -26,17 +27,22 @@ const Home = () => {
                     services.map(service => <div key={service._id} >
                         <div className="col">
                             <div className="card h-50 w-full shadow rounded">
-                                <div ><img style={{ height: "300px" }} src={service?.image} className="card-img-top rounded  p-2" alt="..." /></div>
+                                <div >
+                                    <PhotoView src={service?.image}>
+                                        <img style={{ height: "300px" }} src={service?.image} className="card-img-top rounded  p-2" alt="..." />
+                                    </PhotoView>
+
+                                </div>
                                 <div className="card-body">
                                     <h5 className="card-title fw-bold"> {service.name}</h5>
                                     <p className="card-text">
 
                                         {service?.description.slice(0, 100) + '...'}
                                     </p>
-                                   <div className='d-flex justify-content-between'>
-                                   <p className='fw-bold'>$ {service?.price}</p>
-                                   <p className='fw-bold'>Rating: {service?.rating}</p>
-                                   </div>
+                                    <div className='d-flex justify-content-between'>
+                                        <p className='fw-bold'>$ {service?.price}</p>
+                                        <p className='fw-bold'>Rating: {service?.rating}</p>
+                                    </div>
                                 </div>
                                 <Link to={`/serviceDetails/${service._id}`} className="btn btn-dark ">Service Details</Link>
                             </div>
