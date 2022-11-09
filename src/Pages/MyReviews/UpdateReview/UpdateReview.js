@@ -6,18 +6,18 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const UpdateReview = () => {
     const review = useLoaderData()
-    const{user}=useContext(AuthContext)
-//   console.log(review);
-    const[customerReview, setCustomerReview]=useState(review)
-    
+    const { user } = useContext(AuthContext)
+    //   console.log(review);
+    const [customerReview, setCustomerReview] = useState(review)
+
     // const [refresh, setRefresh] = useState(false);
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/reviews/${review._id}`)
-        .then(res=>res.json())
-        .then(data=>setCustomerReview(data))
+    useEffect(() => {
+        fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`)
+            .then(res => res.json())
+            .then(data => setCustomerReview(data))
 
-     },[review._id])
+    }, [review._id])
 
     const handleUpdateReview = (e) => {
         e.preventDefault()
@@ -30,7 +30,7 @@ const UpdateReview = () => {
         // form.reset()
 
         const updatedReview = {
-    
+
             customer: cName,
             email,
             rating,
@@ -38,21 +38,21 @@ const UpdateReview = () => {
             text
         }
         setCustomerReview(updatedReview)
-        fetch(`http://localhost:5000/reviews/${review._id}`,{
-           method:'PUT',
-           headers:{
-            'content-type':'application/json'
-           },
-           body:JSON.stringify(customerReview)
+        fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(customerReview)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data.modifiedCount){
-                toast.success('Review updated successfully')
-                //  console.log(data)
-            
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    toast.success('Review updated successfully')
+                    //  console.log(data)
+
+                }
+            })
 
     }
     return (
