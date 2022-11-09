@@ -29,9 +29,27 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user);
+                console.log(user.email);
+                 
+                const currentUser = {
+                    email: user.email
+                }
+                // getting json web token
+                fetch('https://assignment-11-server-ebon.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('Tour-token', data.token);
+                        navigate(from, { replace: true })
+                    });
+
                 form.reset()
-                navigate(from,{replace:true})
                 toast.success("You have Login successfully")
             })
             .catch(error => toast.error(error.message))

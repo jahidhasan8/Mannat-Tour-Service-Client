@@ -31,6 +31,7 @@ const AuthProvider = ({ children }) => {
 
     // log out user
     const logOut = () => {
+        localStorage.removeItem('Tour-token')
         setLoading(true)
         return signOut(auth)
     }
