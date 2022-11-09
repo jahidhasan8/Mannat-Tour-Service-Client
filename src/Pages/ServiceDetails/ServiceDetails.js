@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     const { name, description, image, price, rating } = services
     return (
         <div>
-            <div className='p-5 '>
+            <div className='p-5'>
                 <Card className='  mx-auto mt-5 rounded mb-5 col-md-8 shadow'>
 
                     <Card.Title className='text-center fs-3 fw-bold m-0 rounded py-2 mx-2'> {name}
@@ -44,7 +44,7 @@ const ServiceDetails = () => {
             </div>
 
             {/* Review Section */}
-            <div className='mb-5'>
+            <div className='mb-5 w-full container'>
                  
                  <ServiceReview></ServiceReview>
               

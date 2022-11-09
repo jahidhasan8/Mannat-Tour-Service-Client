@@ -13,7 +13,6 @@ const ServiceReview = () => {
     const { user } = useContext(AuthContext)
     const [customerReview, setCustomerReview] = useState([])
 
-    // console.log(customerReview[0]);
 
 
     const handleAddReview = (e) => {
@@ -60,12 +59,12 @@ const ServiceReview = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/serviceReview?serviceId=${_id}`)
+        fetch(` https://assignment-11-server-ebon.vercel.app/serviceReview?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => setCustomerReview(data))
     }, [_id])
 
-    
+
     return (
         <div>
             {
@@ -105,7 +104,7 @@ const ServiceReview = () => {
             <>
                 <div className="row d-flex justify-content-center mt-5">
                     <div className="col-md-10 col-xl-8 text-center">
-                        <h3 className="mb-4">Reviewers</h3>
+                        <h3 className="mb-4 fw-bold">Reviewers</h3>
                         <p className="mb-4 fw-semibold pb-2 mb-md-5 pb-md-0">
                             Take a Look all reviewers review who are already taken my services.
                         </p>
@@ -118,17 +117,17 @@ const ServiceReview = () => {
                         customerReview?.length && customerReview.map(singleReview => <div key={singleReview._id}>
 
                             <div className="col h-50">
-                                <div className="card border-0  w-full shadow-lg rounded-lg" style={{ height: "350px" }}>
+                                <div className="card  w-full shadow-lg rounded-lg" style={{ height: "350px" }}>
                                     <div >
                                         <img
-                                            src={singleReview.photoURL ? singleReview.photoURL : singleReview.photo}
+                                            src={singleReview?.photoURL ? singleReview.photoURL : singleReview?.photo}
                                             className="card-img-top rounded-circle shadow-1-strong  p-2" alt="..." style={{ width: '150px', height: '150px' }} />
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title fw-bold"> {singleReview.customer}</h5>
-                                        <h5 className="card-title fw-bold text-warning">Rating : {singleReview.rating}</h5>
+                                        <h5 className="card-title fw-bold text-warning">Rating : {singleReview?.rating}</h5>
                                         <p className="card-text">
-                                            "{singleReview.text}"
+                                            "{singleReview?.text}"
 
                                         </p>
                                     </div>
