@@ -29,7 +29,6 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user.email);
                  
                 const currentUser = {
                     email: user.email
@@ -44,7 +43,6 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         localStorage.setItem('Tour-token', data.token);
                         navigate(from, { replace: true })
                     });

@@ -49,7 +49,7 @@ const ServiceReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 if (data.acknowledged) {
                     toast.success('review added successfully')
                     form.reset()
@@ -60,12 +60,12 @@ const ServiceReview = () => {
     }
 
     useEffect(() => {
-        fetch(`https://assignment-11-server-ebon.vercel.app/reviews?serviceId=${_id}`)
+        fetch(`http://localhost:5000/serviceReview?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => setCustomerReview(data))
     }, [_id])
 
-
+    
     return (
         <div>
             {
@@ -115,7 +115,7 @@ const ServiceReview = () => {
                 <div className="row row-cols-1 rounded row-cols-md-3 g-5 text-center mt-5 mx-auto container">
                     {
 
-                        customerReview.map(singleReview => <div key={singleReview._id}>
+                        customerReview?.length && customerReview.map(singleReview => <div key={singleReview._id}>
 
                             <div className="col h-50">
                                 <div className="card border-0  w-full shadow-lg rounded-lg" style={{ height: "350px" }}>
