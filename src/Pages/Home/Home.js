@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CarouselBanner from './Carousel/CarouselBanner'
 import useTitle from '../../hooks/useTitle';
+import Faq from '../Home/Faq/Faq'
+import About from '../Home/About/About'
 
 const Home = () => {
     useTitle("Home")
@@ -42,6 +44,8 @@ const Home = () => {
                         }
                         <Link to='/services' className="btn btn-dark mx-auto mt-5">See All</Link>
          </div>
+         <About></About>
+            <Faq></Faq>
         </div>
     );
 };
