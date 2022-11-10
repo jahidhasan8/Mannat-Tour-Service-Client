@@ -10,7 +10,7 @@ const ServiceReview = () => {
     const { name, _id, price } = services
     const { user } = useContext(AuthContext)
     const [customerReview, setCustomerReview] = useState([])
-
+// console.log(user);
 
 
     const handleAddReview = (e) => {
@@ -23,7 +23,7 @@ const ServiceReview = () => {
         const photoURL = user?.photoURL
         const rating = form.rating.value
         // form.reset()
-
+          
         const review = {
             serviceId: _id,
             serviceName: name,
@@ -35,6 +35,8 @@ const ServiceReview = () => {
             photoURL,
             text
         }
+          const updateReview=[...customerReview,review]
+          setCustomerReview(updateReview)
 
         fetch('https://assignment-11-server-ebon.vercel.app/reviews', {
             method: 'POST',
@@ -48,6 +50,7 @@ const ServiceReview = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
+
                     toast.success('review added successfully')
                     form.reset()
                 }
@@ -60,7 +63,11 @@ const ServiceReview = () => {
     useEffect(() => {
         fetch(` https://assignment-11-server-ebon.vercel.app/serviceReview?serviceId=${_id}`)
             .then(res => res.json())
-            .then(data => setCustomerReview(data))
+            .then(data => {
+                //  const updateReview=[...review,data]
+                // setCustomerReview(data)
+                setCustomerReview(data)
+            })
     }, [_id])
 
 
@@ -76,7 +83,7 @@ const ServiceReview = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicText">
                             <Form.Label>Image</Form.Label>
-                            <Form.Control type="text" name='photo' placeholder="Enter your photo url" required />
+                            <Form.Control type="text" name='photo' placeholder="Enter your photo url"  />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicNumber">

@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     
+   
      //  google and github signin
      const githubAndGoogleSignIn = (googleProvider) => {
         setLoading(true)
@@ -52,7 +53,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         githubAndGoogleSignIn,
         loading,
-        setLoading
+        setLoading,
 
     }
 

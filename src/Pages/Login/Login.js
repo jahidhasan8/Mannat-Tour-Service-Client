@@ -68,6 +68,7 @@ const Login = () => {
                 toast.success("SignIn with Google Successfull")
             })
             .catch(error => toast.error(error.message))
+            
     }
 
     const handleGithubSignIn = (e) => {

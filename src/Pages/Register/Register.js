@@ -9,7 +9,7 @@ import { Spinner } from 'react-bootstrap';
 
 const Register = () => {
 
-    const { createUser,loading } = useContext(AuthContext)
+    const { createUser,loading,setLoading } = useContext(AuthContext)
 
      useTitle("Register")
 
@@ -24,11 +24,15 @@ const Register = () => {
                 const user = result.user
                 console.log(user);
                 form.reset();
+                setLoading(true)
                 toast.success("You have Register successfully")
+                setLoading(false)
             })
             .catch(error => toast.error(error.message))
+           setLoading(false)
     }
      
+
     // spinner will show if page data load lately
     if (loading) {
         return <div className="d-flex justify-content-center">
