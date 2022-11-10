@@ -63,11 +63,10 @@ const ServiceReview = () => {
      
     // fetching all reviews under specific single service
     useEffect(() => {
-        fetch(` https://assignment-11-server-ebon.vercel.app/serviceReview?serviceId=${_id}`)
+    fetch(`https://assignment-11-server-ebon.vercel.app/serviceReview?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => {
-                //  const updateReview=[...review,data]
-                // setCustomerReview(data)
+
                 setCustomerReview(data)
             })
     }, [_id])

@@ -6,7 +6,7 @@ import { BsFacebook,BsInstagram,BsTwitter } from "react-icons/bs";
 const Footer = () => {
     return (
 
-        <div className="mt-5">
+        <div fixed="bottom" className="mt-5 ">  
 
             <footer className="text-center text-white bg-dark mx-0 row">
 
