@@ -59,7 +59,7 @@ const Services = () => {
 
                                     <div className='d-flex justify-content-between'>
                                         <p className='fw-bold'>$ {service?.price}</p>
-                                        <p className='fw-bold'>Rating: {service?.rating}</p>
+                                        <p className='fw-bold'>Rating: {service?.rating?service.rating:"N/A"}</p>
                                     </div>
                                 </div>
                                 <Link to={`/serviceDetails/${service._id}`} className="btn btn-dark ">Service Details</Link>
