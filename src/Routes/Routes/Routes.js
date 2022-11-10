@@ -10,11 +10,13 @@ import MyReviews from "../../Pages/MyReviews/MyReviews";
 import AddService from "../../Pages/AddService/AddService";
 import UpdateReview from "../../Pages/MyReviews/UpdateReview/UpdateReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorPage from "../../ErrorPage/ErrorPage";
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -24,7 +26,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('https://assignment-11-server-ebon.vercel.app/services')
             },
             {
                 path: '/serviceDetails/:id',

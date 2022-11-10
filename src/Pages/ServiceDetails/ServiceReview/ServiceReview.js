@@ -1,6 +1,4 @@
 
-
-
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
@@ -57,7 +55,8 @@ const ServiceReview = () => {
             })
             .catch(error => toast.error(error.message))
     }
-
+     
+    // fetching all reviews under specific single service
     useEffect(() => {
         fetch(` https://assignment-11-server-ebon.vercel.app/serviceReview?serviceId=${_id}`)
             .then(res => res.json())

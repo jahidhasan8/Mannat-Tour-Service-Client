@@ -9,7 +9,8 @@ const MyReviews = () => {
     const { user,logOut } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
     useTitle("MyReviews")
-
+    
+    // json web token sending to server for verifying
     useEffect(() => {
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews?email=${user?.email}`,{
             headers: {
@@ -31,7 +32,8 @@ const MyReviews = () => {
 
             })
     }, [user?.email,logOut])
-
+    
+    
     const handleDelete = (id) => {
         const allow = window.confirm("are you sure,you want to delete this review")
 

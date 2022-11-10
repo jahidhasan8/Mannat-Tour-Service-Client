@@ -1,13 +1,37 @@
-import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import React, { useEffect, useState } from 'react';
+import { Link} from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import { PhotoView } from 'react-photo-view';
 import { Spinner } from 'react-bootstrap';
+
 const Services = () => {
-    const services = useLoaderData()
-    const { setLoading, loading } = useContext(AuthContext)
+
     useTitle("Services")
+
+      const[services,setServices]=useState([])
+      const [loading,setLoading]=useState(true)
+    
+    //   fetching all services data
+    useEffect(()=>{
+        fetch('https://assignment-11-server-ebon.vercel.app/services')
+        .then(res=>res.json())
+        .then(data=>{
+            if(data?.length===0){
+              return  setLoading(true)
+            }
+            setLoading(false)
+           return setServices(data)
+        })
+    },[])
+     
+    // spinner will show if data not yet load when fetching data
+    if (loading) {
+        return <div className="d-flex justify-content-center">
+            <Spinner animation="border m-5" variant="info" />
+        </div>
+
+    }
+
     return (
         <div>
 

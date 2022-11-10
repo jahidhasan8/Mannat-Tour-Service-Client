@@ -7,9 +7,12 @@ import About from '../Home/About/About'
 import { PhotoView } from 'react-photo-view';
 
 const Home = () => {
+
     useTitle("Home")
     const [services, setServices] = useState([])
     let size = 3
+    
+    // fetching data upon size 
     useEffect(() => {
         const url = `https://assignment-11-server-ebon.vercel.app/services?size=${size}`;
         fetch(url)
@@ -18,6 +21,7 @@ const Home = () => {
                 setServices(data)
             })
     }, [size])
+
     return (
         <div >
 

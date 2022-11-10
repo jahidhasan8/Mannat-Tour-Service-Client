@@ -9,10 +9,11 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { FaGithub} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import useTitle from '../../hooks/useTitle';
+import { Spinner } from 'react-bootstrap';
 
 const Login = () => {
      
-    const{signIn,githubAndGoogleSignIn,setLoading}=useContext(AuthContext)
+    const{signIn,githubAndGoogleSignIn,setLoading,loading}=useContext(AuthContext)
      useTitle("Login")
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider();
@@ -79,9 +80,17 @@ const Login = () => {
             })
             .catch(error => toast.error(error.message))
     }
+    
+    // spinner will show if page load lately
+    if (loading) {
+        return <div className="d-flex justify-content-center">
+            <Spinner animation="border m-5" variant="info" />
+        </div>
 
+    }
     return (
-        <Form onSubmit={handleSubmit}  className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
+       
+      <Form onSubmit={handleSubmit}  className=" w-50 mt-5 shadow-lg p-3 rounded-4 mx-auto">
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>

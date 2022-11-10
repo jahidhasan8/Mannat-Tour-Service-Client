@@ -31,7 +31,7 @@ const ReviewTable = ({ review, handleDelete }) => {
                     </div>
                     <div>
                         <div className="fw-bold">{customer}</div>
-                        {/* <div className="text-sm opacity-50">{phone}</div> */}
+                        
                     </div>
                 </div>
             </td>

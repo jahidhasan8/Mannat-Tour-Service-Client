@@ -5,10 +5,14 @@ import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
+import { Spinner } from 'react-bootstrap';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+
+    const { createUser,loading } = useContext(AuthContext)
+
      useTitle("Register")
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -23,6 +27,14 @@ const Register = () => {
                 toast.success("You have Register successfully")
             })
             .catch(error => toast.error(error.message))
+    }
+     
+    // spinner will show if page data load lately
+    if (loading) {
+        return <div className="d-flex justify-content-center">
+            <Spinner animation="border m-5" variant="info" />
+        </div>
+
     }
 
     return (

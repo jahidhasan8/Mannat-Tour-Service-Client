@@ -9,7 +9,7 @@ const UpdateReview = () => {
     const { user } = useContext(AuthContext)
     const [customerReview, setCustomerReview] = useState(review)
 
-
+    // fetch data on specific id related service
     useEffect(() => {
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`)
             .then(res => res.json())

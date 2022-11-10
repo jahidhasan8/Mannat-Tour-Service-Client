@@ -4,7 +4,9 @@ import toast from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
+
   useTitle('AddService')
+
   const handleAddService = (e) => {
     e.preventDefault()
     const form = e.target
@@ -12,7 +14,6 @@ const AddService = () => {
     const image = form.image.value
     const description = form.description.value
     const price = form.price.value
-    //   console.log(name, image, description,price);
 
     const service = {
       name,
@@ -20,7 +21,8 @@ const AddService = () => {
       image,
       description
     };
-
+    
+    // post api
     fetch("https://assignment-11-server-ebon.vercel.app/services", {
       method: "POST",
       headers: {
@@ -42,6 +44,7 @@ const AddService = () => {
         toast.error(error.message);
       })
   }
+
   return (
     <div>
       <Form onSubmit={handleAddService} className=" w-50 mt-4 shadow-lg p-3 rounded-4 mx-auto">
