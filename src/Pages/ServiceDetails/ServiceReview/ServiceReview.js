@@ -22,8 +22,9 @@ const ServiceReview = () => {
         const photo = form.photo.value
         const photoURL = user?.photoURL
         const rating = form.rating.value
+        const date=new Date()
         // form.reset()
-          
+        //   console.log(date);
         const review = {
             serviceId: _id,
             serviceName: name,
@@ -33,7 +34,8 @@ const ServiceReview = () => {
             rating,
             photo,
             photoURL,
-            text
+            text,
+            date
         }
           const updateReview=[...customerReview,review]
           setCustomerReview(updateReview)

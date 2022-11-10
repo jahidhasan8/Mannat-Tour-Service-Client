@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
-import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+
 
 const UpdateReview = () => {
     const review = useLoaderData()
-    const { user } = useContext(AuthContext)
+
     const [customerReview, setCustomerReview] = useState(review)
-    // console.log(customerReview);
-    
-    const navigate=useNavigate()
+
+
+    const navigate = useNavigate()
 
     // fetch data on specific id related service
     useEffect(() => {
@@ -22,22 +22,6 @@ const UpdateReview = () => {
 
     const handleUpdateReview = (e) => {
         e.preventDefault()
-        const form = e.target
-        const cName = form.name.value
-        const email = user?.email
-        const text = form.text.value
-        const photo = form.photo.value
-        const rating = form.rating.value
-
-        const updatedReview = {
-
-            customer: cName,
-            email,
-            rating,
-            photo,
-            text
-        }
-        setCustomerReview(updatedReview)
 
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`, {
             method: 'PUT',
@@ -50,12 +34,23 @@ const UpdateReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount) {
+
+                if (data.modifiedCount > 0) {
                     toast.success('Review updated successfully')
-                   
+
                     navigate('/MyReviews')
                 }
             })
+    }
+
+
+    const handleInputChange = (e) => {
+        const value = e.target.value
+        const field = e.target.name
+        const newReview = { ...customerReview }
+        newReview[field] = value
+        setCustomerReview(newReview)
+
     }
 
     return (
@@ -64,22 +59,22 @@ const UpdateReview = () => {
                 <p className='text-center fw-semibold fs-5'>Please Update Review</p>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label> Name</Form.Label>
-                    <Form.Control type="text" defaultValue={review.customer} name='name' placeholder="Enter your name" required />
+                    <Form.Control onChange={handleInputChange} type="text" defaultValue={review.customer} name='name' placeholder="Enter your name" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicText">
                     <Form.Label>Image</Form.Label>
-                    <Form.Control type="text" defaultValue={review.photo} name='photo' placeholder="Enter your photo url" />
+                    <Form.Control onChange={handleInputChange} type="text" defaultValue={review.photo} name='photo' placeholder="Enter your photo url" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicNumber">
                     <Form.Label>Rating</Form.Label>
-                    <Form.Control type="number" defaultValue={review.rating} name='rating' placeholder="Enter Rating" />
+                    <Form.Control onChange={handleInputChange} type="number" defaultValue={review.rating} name='rating' placeholder="Enter Rating" />
                 </Form.Group>
                 <>
 
                     <FloatingLabel controlId="floatingTextarea2" label="Text">
                         <Form.Control
-                            as="textarea" defaultValue={review.text} name='text'
+                            as="textarea" onChange={handleInputChange} defaultValue={review.text} name='text'
                             placeholder="Leave a Text here"
                             style={{ height: '100px' }}
                         />
