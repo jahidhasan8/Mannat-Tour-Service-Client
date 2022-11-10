@@ -65,6 +65,21 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user);
+                const googleUser = {
+                    email: user.email
+                }
+                fetch('https://assignment-11-server-ebon.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json(googleUser))
+                    .then(data => {
+                        localStorage.setItem('Tour-token', data.token);
+                        navigate(from, { replace: true })
+                    });
                 toast.success("SignIn with Google Successfull")
             })
             .catch(error => toast.error(error.message))

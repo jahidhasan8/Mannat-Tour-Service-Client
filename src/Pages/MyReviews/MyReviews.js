@@ -6,13 +6,13 @@ import ReviewTable from './ReviewTable/ReviewTable';
 
 const MyReviews = () => {
 
-    const { user,logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
     useTitle("MyReviews")
-    
+
     // json web token sending to server for verifying
     useEffect(() => {
-        fetch(`https://assignment-11-server-ebon.vercel.app/reviews?email=${user?.email}`,{
+        fetch(`https://assignment-11-server-ebon.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('Tour-token')}`
 
@@ -28,12 +28,12 @@ const MyReviews = () => {
             })
             .then(data => {
                 setReviews(data)
-            
+
 
             })
-    }, [user?.email,logOut])
-    
-    
+    }, [user?.email, logOut])
+
+
     const handleDelete = (id) => {
         const allow = window.confirm("are you sure,you want to delete this review")
 
@@ -42,7 +42,7 @@ const MyReviews = () => {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('Tour-token')}`
-    
+
                 }
             })
                 .then(res => res.json())
@@ -68,7 +68,7 @@ const MyReviews = () => {
 
             <div className=" w-full">
                 <table className="table w-50 mx-auto">
-            
+
                     <thead>
                         <tr>
                             <th>

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
@@ -8,6 +8,9 @@ const UpdateReview = () => {
     const review = useLoaderData()
     const { user } = useContext(AuthContext)
     const [customerReview, setCustomerReview] = useState(review)
+    // console.log(customerReview);
+    
+    const navigate=useNavigate()
 
     // fetch data on specific id related service
     useEffect(() => {
@@ -35,6 +38,7 @@ const UpdateReview = () => {
             text
         }
         setCustomerReview(updatedReview)
+
         fetch(`https://assignment-11-server-ebon.vercel.app/reviews/${review._id}`, {
             method: 'PUT',
             headers: {
@@ -48,6 +52,8 @@ const UpdateReview = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     toast.success('Review updated successfully')
+                   
+                    navigate('/MyReviews')
                 }
             })
     }
@@ -62,7 +68,7 @@ const UpdateReview = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicText">
                     <Form.Label>Image</Form.Label>
-                    <Form.Control type="text" defaultValue={review.photo} name='photo' placeholder="Enter your photo url" required />
+                    <Form.Control type="text" defaultValue={review.photo} name='photo' placeholder="Enter your photo url" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicNumber">

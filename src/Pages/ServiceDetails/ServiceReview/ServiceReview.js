@@ -117,7 +117,7 @@ const ServiceReview = () => {
                     </div>
                 </div>
 
-                <div className="row row-cols-1 rounded row-cols-md-3 g-5 text-center mt-5 mx-auto container">
+                <div className="row row-cols-1 rounded row-cols-md-3 g-5 text-center mt-2 mx-auto container">
                     {
 
                         customerReview?.length && customerReview.map(singleReview => <div key={singleReview._id}>
