@@ -39,7 +39,7 @@ const ServiceDetails = () => {
                     <div className='d-flex justify-content-between px-4'>
                         <p className='fw-bold'> Price: {price}$</p>
                         <div className='d-flex'>
-                            <p className='mt-1 px-2 fw-bold'>Rating: {rating}</p>
+                            <p className='mt-1 px-2 fw-bold'>Rating: {rating?rating:"N/A"}</p>
                         </div>
                     </div>
 
