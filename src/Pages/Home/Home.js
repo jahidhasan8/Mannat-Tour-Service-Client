@@ -6,6 +6,7 @@ import Faq from '../Home/Faq/Faq'
 import About from '../Home/About/About'
 import { PhotoView } from 'react-photo-view';
 import Partner from './Partner/Partner';
+import Review from './Review/Review';
 
 const Home = () => {
 
@@ -60,6 +61,7 @@ const Home = () => {
                 <Link to='/services' className="btn btn-dark mx-auto mt-5">See All</Link>
             </div>
             <Partner></Partner>
+            <Review></Review>
             <About></About>
             <Faq></Faq>
         </div>
