@@ -1,0 +1,61 @@
+.footer-logo img {
+    margin-bottom: 41px;
+    width: 111px;
+}
+
+p.contact-link {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-size: 14px;
+}
+p.connect-link {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+p.connect-link:hover{
+     letter-spacing: 5px;
+     transition: linear .2s;
+}
+
+h3.bottom-title {
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 23px;
+    letter-spacing: 1px;
+}
+
+.input-bottom input {
+    width: 100%;
+    padding: 8px 30px;
+    outline: none;
+    margin: 10px;
+    border: 1px solid grey;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+input.submitBtn {
+    background: #E2CA86;
+    border: none;
+    font-weight: 600;
+}
+
+.row.bottom-footer-wrapper {
+    margin-top: 150px;
+}
+
+.copy-footer p {
+   margin-top: 36px;
+}
+.copy-footer {
+     margin-top: 30px;
+    background: #1a1a1b;
+    text-align: center;
+    padding: 20px;
+    color: #80808078;
+}
