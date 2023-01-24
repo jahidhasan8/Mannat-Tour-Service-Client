@@ -15,7 +15,7 @@ const About = () => {
                 </div>
 
                 <div className='col-md-7'>
-                    <p className='fs-6 p-2 mt-5'>Hi, I am Jahid Hasan.I am providing tour guide service.I am a local guide from Bangladesh. I enjoy traveling and making new friends. As I travel, I get to sample experiences in tourist attractions, parks, restaurants and coffee houses, villages, sea beach, hill among others.I wish you will enjoy Bangladesh.Here you can meet with different culture, different types of people. I am fluent in English and Bengali,German, French, in spoken and written. I am a public speaker with a specialty in corporate events. I wish to travel to new places, explore the world and contribute my experience to help others make the right decision when they wish to visit a new place.</p>
+                    <p className='fs-6 p-2 mt-5'>There are many potential communities that could be surveyed for this analysis. GitHub and Stack Overflow are used here first because of their size and second because of their public exposure of the data necessary for the analysis. We encourage, however, interested parties to perform their own analyses using other sources. All numerical rankings should be taken with a grain of salt. We rank by numbers here strictly for the sake of interest. In general, the numerical ranking is substantially less relevant than the language’s tier or grouping.</p>
                 </div>
             </div>
         </div>

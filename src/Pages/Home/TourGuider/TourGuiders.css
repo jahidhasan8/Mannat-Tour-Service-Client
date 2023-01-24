@@ -1,0 +1,60 @@
+
+h1.guider-heading {
+    text-align: center;
+    margin-top:80px;
+    margin-bottom: 60px;
+    font-family: 'Bebas Neue', cursive;
+    color: #4B4A4A;
+    letter-spacing: 2px;
+}
+.tour-text-wrapper {
+    margin-top: 60px;
+}
+
+h3.planner-text {
+    margin: 20px 0;
+}
+
+p.planner-para {
+    font-size: 17px;
+    color: gray;
+}
+
+
+
+button.more-btn {
+    border: none;
+    background: #1a1a1b;
+    color: white;
+    padding: 2px 25px;
+    border-radius: 26% 74% 24% 76% / 100% 0% 100% 0%;
+}
+
+
+.guider-img-box img {
+    border-radius: 20px;
+    margin-bottom: 21px;
+}
+
+.guider-des {
+    padding: 9px 20px;
+    background: #eee;
+    padding-top: 33px;
+    border-radius: 20px;
+}
+
+h4.name {
+    font-family: 'Bebas Neue', cursive;
+    margin-top: -12px;
+}
+
+p.expart {
+    font-family: 'Bebas Neue', cursive;
+    margin-top: -8px;
+    color: #8d6e1a;
+}
+
+.guider-sec{
+    margin-top: 100px;
+    margin-bottom: 180px;
+}

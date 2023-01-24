@@ -8,6 +8,7 @@ import { PhotoView } from 'react-photo-view';
 import Partner from './Partner/Partner';
 import Review from './Review/Review';
 import ArrangementTravel from './ArrangementTravel/ArrangementTravel';
+import TourGuiders from './TourGuider/TourGuiders';
 
 const Home = () => {
 
@@ -65,6 +66,7 @@ const Home = () => {
             <Review></Review>
             <About></About>
             <ArrangementTravel></ArrangementTravel>
+            <TourGuiders></TourGuiders>
             <Faq></Faq>
         </div>
     );
