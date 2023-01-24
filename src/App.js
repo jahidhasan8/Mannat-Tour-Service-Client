@@ -10,6 +10,7 @@ function App() {
 
      <RouterProvider router={routes}></RouterProvider>
      <Toaster />
+     
     </div>
   );
 }

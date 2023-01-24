@@ -1,0 +1,83 @@
+.ceo-talk-sec{
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+h1.ceo-title {
+    margin-top: 100px;
+    font-weight: 700;
+    color: #4B4A4A;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+p.ceo-para {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    margin-bottom: 70px;
+    color: #4B4A4A;
+    
+}
+.work-title{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+
+h3.ceo-abt {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 500;
+    color: #242323;
+    letter-spacing: 2px;
+}
+
+p.ceo-param {
+    text-align: justify;
+    margin-right: 35px;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+h3.c-dtl {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 31px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #535252;
+    letter-spacing: 2px;
+}
+
+h3.c-hm {
+    font-weight: 700;
+    color: #514e4e;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+p.C-para {
+    font-family: 'Bebas Neue', cursive;
+    color: #333131;
+}
+
+h3.c-con {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 700;
+    color: #474545;
+    letter-spacing: 2px;
+}
+
+
+
+.social {
+    color: #fcfafa;
+    font-size: 19px;
+    margin-right: 13px;
+    background: gray;
+    margin-top: 15px;
+    padding: 8px 11px;
+    border-radius: 31px;
+}
+
+span a:hover i {
+    transform: rotate(90deg);
+    transition: transform .3s;
+}

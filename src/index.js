@@ -15,6 +15,7 @@ root.render(
     <PhotoProvider>
     <AuthProvider>
       <App />
+      
     </AuthProvider>
     </PhotoProvider>
   </React.StrictMode>
