@@ -1,0 +1,46 @@
+.services-sec{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+i.fas.iconStyle.fa-archive {
+    color: #F05757;
+    font-size: 36px;
+}
+
+i.fas.iconStyle.fa-globe-americas {
+    color: #F05757;
+    font-size: 36px;
+}
+
+i.fas.iconStyle.fa-user-tie {
+    color: #F05757;
+    font-size: 36px;
+}
+
+i.fas.iconStyle.fa-lock {
+    color: #F05757;
+    font-size: 36px;
+}
+
+.i-area {
+    border: 1px solid #F05757;
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.col-lg-6.cart-services.col-md-6 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+h3.service-heading {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 40px;
+}
