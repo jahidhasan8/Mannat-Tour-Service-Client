@@ -9,6 +9,7 @@ import Partner from './Partner/Partner';
 import Review from './Review/Review';
 import ArrangementTravel from './ArrangementTravel/ArrangementTravel';
 import TourGuiders from './TourGuider/TourGuiders';
+import Testimonials from './Testimonials/Testimonials';
 
 const Home = () => {
 
@@ -67,6 +68,7 @@ const Home = () => {
             <About></About>
             <ArrangementTravel></ArrangementTravel>
             <TourGuiders></TourGuiders>
+            <Testimonials></Testimonials>
             <Faq></Faq>
         </div>
     );
