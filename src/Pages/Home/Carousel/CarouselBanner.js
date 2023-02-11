@@ -10,14 +10,14 @@ const Home = () => {
                 <Carousel.Item className=''>
                     <img style={{ height: "500px" }}
                         className="d-block w-100 rounded"
-                        src="https://i.ibb.co/y59ZvKc/photo-1469474968028-56623f02e42e-crop-faces-edges-cs-tinysrgb-fit-crop-fm-jpg-ixid-Mnwx-Mj-A3f-DB8-M.jpg"
+                        src="https://i.ibb.co/L6RjkG4/hero-bg-1-3.jpg"
                         alt="First slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item>
                     <img style={{ height: "500px" }}
                         className="d-block w-100 rounded"
-                        src="https://i.ibb.co/HKQmpHY/photo-1520520731457-9283dd14aa66-crop-faces-edges-cs-tinysrgb-fit-crop-fm-jpg-ixid-Mnwx-Mj-A3f-DB8-M.jpg"
+                        src="https://i.ibb.co/94vWbgL/hero-bg-1-2.jpg"
                         alt="Second slide"
                     />
 
@@ -25,8 +25,22 @@ const Home = () => {
                 <Carousel.Item>
                     <img style={{ height: "500px" }}
                         className="d-block w-100 rounded"
-                        src="https://i.ibb.co/6DPGPkg/photo-1558673810-9b0b6316d4f4-ixlib-rb-4-0.jpg"
+                        src="https://i.ibb.co/94H24J2/hero-bg-1-1.jpg"
                         alt="Third slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img style={{ height: "500px" }}
+                        className="d-block w-100 rounded"
+                        src="https://i.ibb.co/Bn8QJDb/img7.jpg"
+                        alt="Fourth slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img style={{ height: "500px" }}
+                        className="d-block w-100 rounded"
+                        src="https://i.ibb.co/jJytppB/banner-5.jpg"
+                        alt="Fifth slide"
                     />
                 </Carousel.Item>
             </Carousel>

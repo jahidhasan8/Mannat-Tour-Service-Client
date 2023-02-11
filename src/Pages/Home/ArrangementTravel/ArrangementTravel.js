@@ -19,7 +19,7 @@ const ArrangementTravel = () => {
                                    <p className="planner-para">
                                    One of the most common questions we’ve received about Walt Disney World’s new Genie+ service is how it’s possible to “stack” multiple Lightning Lane ride reservations. This post explains how you can stockpile selections to great success, becoming the “last action hero” of your vacation–with afternoons and evenings of non-stop line skipping at Magic Kingdom,
                                    </p>
-                                   <button className="more-btn">Details</button>
+                                   <button className="more-btn bg-success ">Details</button>
                               </div> 
                          </div>
                          <div className="col-lg-6 col-md-6 col-12">

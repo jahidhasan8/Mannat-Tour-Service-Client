@@ -33,7 +33,7 @@ const Services = () => {
     }
 
     return (
-        <div>
+        <div className='mb-5'>
 
             <div className="row row-cols-1 rounded row-cols-md-3 g-5 mt-5 mx-auto container">
 
@@ -62,7 +62,7 @@ const Services = () => {
                                         <p className='fw-bold'>Rating: {service?.rating?service.rating:"N/A"}</p>
                                     </div>
                                 </div>
-                                <Link to={`/serviceDetails/${service._id}`} className="btn btn-dark ">Service Details</Link>
+                                <Link to={`/serviceDetails/${service._id}`} className="btn btn-success ">Service Details</Link>
                             </div>
                         </div>
 

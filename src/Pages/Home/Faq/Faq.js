@@ -4,7 +4,9 @@ import Accordion from 'react-bootstrap/Accordion';
 const Faq = () => {
     return (
 
-        <Accordion className='m-5' defaultActiveKey={['1']} alwaysOpen>
+       <div>
+        <h1 className='font-bold text-center fs-1'>Frequently Asked Questions</h1>
+         <Accordion className='m-5' defaultActiveKey={['1']} alwaysOpen>
             <Accordion.Item eventKey="1">
                 <Accordion.Header>How can I book you As a guide?</Accordion.Header>
                 <Accordion.Body>
@@ -56,6 +58,7 @@ const Faq = () => {
             
         </Accordion>
 
+       </div>
     );
 };
 

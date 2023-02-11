@@ -12,7 +12,7 @@ const Header = () => {
             .catch(error => console.error(error.message))
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="success" variant="dark">
             <Container>
                 <Navbar.Brand as={Link} to={"/"}> Mannat Tour Service</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -52,7 +52,7 @@ const Home = () => {
                                         <p className='fw-bold'>Rating: {service?.rating}</p>
                                     </div>
                                 </div>
-                                <Link to={`/serviceDetails/${service._id}`} className="btn btn-dark ">Service Details</Link>
+                                <Link to={`/serviceDetails/${service._id}`} className="btn btn-success">Service Details</Link>
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@ const Home = () => {
 
                     )
                 }
-                <Link to='/services' className="btn btn-dark mx-auto mt-5">See All</Link>
+                <Link to='/services' className="btn btn-success mx-auto mt-5">See All</Link>
             </div>
             <Partner></Partner>
             <Review></Review>

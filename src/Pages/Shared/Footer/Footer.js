@@ -4,7 +4,7 @@ import footerBg from '../../../images/footer-bg.png';
 
 const Footer = () => {
      return (
-          <div style={{ backgroundImage: `url(${footerBg})`, height:"100vh", backgroundPosition: "center center", paddingTop: "160px", backgroundSize : "cover"}}>
+          <div className='bg-success text-white' style={{ backgroundImage: `url(${footerBg})`, height:"100vh", backgroundPosition: "center center", paddingTop: "160px", backgroundSize : "cover"}}>
               
               <div className="container">
                     <div className="row bottom-footer-wrapper">
@@ -52,7 +52,7 @@ const Footer = () => {
               </div>
 
               <div className="mini-footer">
-                <div className="copy-footer">
+                <div className="copy-footer bg-success text-white">
                      <p>© CopyRight Privacy | Policy  2023</p>
                 </div>
               </div>
