@@ -10,6 +10,7 @@ import Review from './Review/Review';
 import ArrangementTravel from './ArrangementTravel/ArrangementTravel';
 import TourGuiders from './TourGuider/TourGuiders';
 import Testimonials from './Testimonials/Testimonials';
+import Offer from './Offer/Offer';
 
 const Home = () => {
 
@@ -68,6 +69,7 @@ const Home = () => {
             <About></About>
             <ArrangementTravel></ArrangementTravel>
             <TourGuiders></TourGuiders>
+            <Offer></Offer>
             <Testimonials></Testimonials>
             <Faq></Faq>
         </div>
